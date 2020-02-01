@@ -1,0 +1,1 @@
+ALTER TABLE condominio DROP COLUMN TESTE;
