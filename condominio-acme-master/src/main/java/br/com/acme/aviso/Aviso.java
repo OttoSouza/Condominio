@@ -43,7 +43,7 @@ public class Aviso implements Serializable {
 	private String descricaoAviso;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "id_aviso", nullable = false)
+	@JoinColumn(name = "id_unidade", nullable = false)
 	@JsonIgnore
 	private Unidade avisoUnidade;
 	

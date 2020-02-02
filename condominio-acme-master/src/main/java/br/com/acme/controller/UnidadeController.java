@@ -85,7 +85,7 @@ public class UnidadeController {
 		Optional<Unidade> unidadeOptional = this.unidadeService.getUnidadeById(unidadeId);
 		Unidade u = unidadeOptional.get();
 		if (!condominioService.existsById(condominioId)) {
-			throw new NotFoundException("Condominio nao esta presente");
+			throw new NotFoundException("Condominio nao encontrado");
 		}
 		return this.unidadeService.getUnidadeById(u.getId()).map(unidade -> {
 			unidade.setBlocoUnidade(unidadeUpdated.getBlocoUnidade());
@@ -99,7 +99,7 @@ public class UnidadeController {
 		Optional<Unidade> unidadeOptional = this.unidadeService.getUnidadeById(unidadeId);
 		Unidade u = unidadeOptional.get();
 		if (!condominioService.existsById(condominioId)) {
-			throw new NotFoundException("Condominio not found!");
+			throw new NotFoundException("Condominio nao encontrado");
 		}
 		return this.unidadeService.getUnidadeById(u.getId()).map(unidade -> {
 			unidadeService.deleteUnidade(unidade);

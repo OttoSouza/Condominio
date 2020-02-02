@@ -1,58 +1,24 @@
-Condominio -> 
+Condominio
+	Post-> http://localhost:8081/api/condominios
+	Get All -> http://localhost:8081/api/condominios
+-----------------------------------------------------------------------------------------------
 
-Get All -> http://localhost:8081/api/condominios
-Get ID -> http://localhost:8081/api/condominios/condominioId
-Post-> http://localhost:8081/api/condominios
+Unidade	
+	Post -> http://localhost:8081/api/condominios/{condominioId}/unidades
+	Get All -> http://localhost:8081/api/unidades	
+-----------------------------------------------------------------------------------------------
+Multas	
+	Post => http://localhost:8081/api/condominios/{condominioId}/unidades/{unidadeId}/multas	
+	Get => http://localhost:8081/api/condominios/{condominioId}/multas
+	
+Listar Multas 
+	Get com multas => http://localhost:8081/api/unidadades/commultas
+	Get sem multas => http://localhost:8081/api/unidadades/semultas
 
-Json:
+--------------------------------------------------------------------------------------------------
 
-{
-	"nome": "Residencial xyz",
-	"email": "residencialxyz@gmail.com",
-	"telefone": "1234678"
-}
-------------------------------------------------------------------------------------------------
+Avisos
+	Post -> http://localhost:8081/api/condominios/{condominioId}/unidades/{unidadeId}/avisos
+	Get -> http://localhost:8081/api/condominios/{condominioId}/avisos
+---------------------------------------------------------------------------------------------------
 
-Unidades -> 
-
-Get All -> http://localhost:8081/api/unidades
-Get	Id  -> http://localhost:8081/api/unidades/{unidadeId}
-Post -> http://localhost:8081/api/condominios/{condominioId}/unidades
-
-
-Json: 
-{
-	"numeroUnidade": "100",
-	"blocoUnidade": "A",
-	"responsavelUnidade": 
-	{
-		"nome" : "Paula",
-		"email": "paula@gmail.com",
-		"telefone": "123456798"
-	}
-}
-
-------------------------------------------------------------------------------------------------
-Multas -> 
-Get com multas => http://localhost:8081/api/unidadades/commultas
-Get sem multas => http://localhost:8081/api/unidadades/semultas
-Get => http://localhost:8081/api/condominios/{condominioId}/multas
-Post => http://localhost:8081/api/condominios/{condominioId}/unidades/{unidadeId}/multas
-
-Json:
-
-{
-	"descricaoMulta" : "cachorro latindo",
-	"dataMulta" :"21-04-2019",
-	"valorMulta" : 200.00
-}
-------------------------------------------------------------------------------------------------
-Avisos -> 
-Get -> http://localhost:8081/api/condominios/{condominioId}/avisos
-Post -> http://localhost:8081/api/condominios/{condominioId}/unidades/{unidadeId}/avisos
-
-Json : 
-
-{
-	"descricaoAviso" : "Reuniao"
-}

@@ -4,6 +4,7 @@
 package br.com.acme.multas;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import br.com.acme.condominio.Condominio;
@@ -39,7 +41,8 @@ public class Multa implements Serializable {
 
 	private String descricaoMulta;
 
-	private String dataMulta;
+	@JsonFormat(pattern="dd-MM-yyyy")
+	private LocalDate dataMulta;
 
 	private Double valorMulta;
 
@@ -57,11 +60,12 @@ public class Multa implements Serializable {
 		super();
 	}
 
-	public Multa(String descricaoMulta, String dataMulta, Double valorMulta) {
+	public Multa(String descricaoMulta, LocalDate dataMulta, Double valorMulta) {
 		super();
 		this.descricaoMulta = descricaoMulta;
 		this.dataMulta = dataMulta;
 		this.valorMulta = valorMulta;
 	}
+ 
 
 }

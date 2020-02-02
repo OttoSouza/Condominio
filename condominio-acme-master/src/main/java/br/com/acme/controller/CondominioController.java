@@ -64,10 +64,10 @@ public class CondominioController {
 	@DeleteMapping("/condominios/{condominioId}")
 	public String deleteMultas(@PathVariable Long condominioId) {
 		if (!serviceCondominio.existsById(condominioId)) {
-			throw new NotFoundException("Condominio not found!");
+			throw new NotFoundException("Condominio não encontrado");
 		}
 		serviceCondominio.deleteCondominioById(condominioId);
-		return "Deleted Successfully!";
+		return "Deletado com sucesso!";
 	}
 
 }

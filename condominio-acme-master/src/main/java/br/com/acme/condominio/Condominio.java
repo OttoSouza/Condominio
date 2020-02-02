@@ -4,6 +4,7 @@
 package br.com.acme.condominio;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,7 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
+import org.springframework.hateoas.RepresentationModel;
 
 import br.com.acme.aviso.Aviso;
 import br.com.acme.multas.Multa;
@@ -66,5 +67,7 @@ public class Condominio implements Serializable {
 	public Condominio() {
 		super();
 	}
+
+
 
 }
